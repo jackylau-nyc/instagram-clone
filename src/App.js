@@ -187,7 +187,7 @@ function App() {
       {user?.displayName ? (
         <ImageUpload username={user.displayName} />
       ): (
-        <h3>Sorry, please log in to upload a photo.</h3>
+        <h3 className="imageUpload1">Please log in to upload a photo.</h3>
       )}
       
       <div className="app__posts">
