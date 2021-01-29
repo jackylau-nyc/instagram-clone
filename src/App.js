@@ -183,6 +183,12 @@ function App() {
           </div>
         )}
       </div>
+
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName} />
+      ): (
+        <h3>Sorry, please log in to upload a photo.</h3>
+      )}
       
       <div className="app__posts">
         <div className="app__postsLeft">
@@ -194,12 +200,6 @@ function App() {
           }
         </div>
       </div>
-
-      {user?.displayName ? (
-        <ImageUpload username={user.displayName} />
-      ): (
-        <h3>Sorry, please log in to upload a photo.</h3>
-      )}
     </div>
   );
 }
