@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Instagram Clone
+<img src="https://image.shutterstock.com/image-photo/kiev-ukraine-may-18-2016-260nw-423027046.jpg" width="300">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Index
 
-## Available Scripts
+- [About](#about)
+- [Usage](#usage)
+  - [Installation](#installation)
+  - [Commands](#commands)
+  - [Controls](#controls)
+- [Development](#development)
+  - [Pre-Requisites](#pre-requisites)
+  - [Contribution](#contribution)
+- [Resources](#resources)
+- [Gallery](#camera-gallery)
+- [Credit/Acknowledgment](#star2-creditacknowledgment)
 
-In the project directory, you can run:
+## About
+A full-stack web application created with React and Firebase to showcase an Instagram MVP. Posts, Users, and Comments are saved into Firebase.
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Installation
+- Clone the repository into the folder of your choice
 
-### `npm test`
+```
+$ git clone "https://github.com/jackylau-nyc/instagram-clone.git"
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Commands
+- To start up the project, navigate to the project folder and type in the following command. To populate the database, we used Firebase.
+```
+$ npm start
+```
 
-### `npm run build`
+### How To Use
+- Sign up at the top right, Firebase does all the user authentication on the backend
+- Upon logging in, One can upload photos with a caption or comment on posts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Pre-Requisites
+List all the pre-requisites the system needs to develop this project.
+- [Firebase](https://firebase.google.com)
+- [React](https://reactjs.org)
+- An editor of choice (I used VScode)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Libraries
+- [@material/ui-core](https://material-ui.com/getting-started/installation/)
+- [firebase](https://www.npmjs.com/package/firebase)
+- [react-dom](https://www.npmjs.com/package/react-dom)
+- [react-instagram-embed](https://www.npmjs.com/package/react-instagram-embed)
 
-### `npm run eject`
+ ### Contribution
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ Your contributions are always welcome and appreciated. Following are the things you can do to contribute to this project.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ 1. **Report a bug**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+ If you think you have encountered a bug, and I should know about it, feel free to report it [here](https://github.com/jackylau-nyc/instagram-clone/issues) and I will take care of it.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ 2. **Create a pull request**
 
-## Learn More
+ It can't get better than this, your pull request will be appreciated by the community. You can get started by picking up any open issues from [here](https://github.com/jackylau-nyc/instagram-clone/pulls) and make a pull request.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ > If you are new to open-source, make sure to check read more about it [here](https://www.digitalocean.com/community/tutorial_series/an-introduction-to-open-source) and learn more about creating a pull request [here](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Resources
+- [CUNY Tech Prep starter repo](https://github.com/CUNYTechPrep/project-starter)
 
-### Code Splitting
+## Gallery
+<img src="https://i.imgur.com/Gy4LuE2.png" width="300">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Credit/Acknowledgment
+- [CleverProgramming](https://www.youtube.com/channel/UCqrILQNl5Ed9Dz6CGMyvMTQ)
