@@ -16,7 +16,7 @@
 - [Credit/Acknowledgment](#star2-creditacknowledgment)
 
 ## About
-A full-stack web application created with React and Firebase to showcase an Instagram MVP. Posts, Users, and Comments are saved into Firebase.
+A full-stack web application created with the front-end in React and the back-end in Firebase to showcase an Instagram MVP. Firebase also hosts the database with Posts, Users, and Comments. Web hosting is also supplied by Firebase.
 
 ## Usage
 
@@ -71,6 +71,7 @@ List all the pre-requisites the system needs to develop this project.
 
 ## Gallery
 <img src="https://i.imgur.com/Gy4LuE2.png" width="300">
+<img src="https://i.imgur.com/TyFM2Tz.png" width="300">
 
 ## Credit/Acknowledgment
 - [CleverProgramming](https://www.youtube.com/channel/UCqrILQNl5Ed9Dz6CGMyvMTQ)
