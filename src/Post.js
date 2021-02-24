@@ -1,84 +1,87 @@
-import React, { useState, useEffect } from 'react';
-import './Post.css';
-import Avatar from '@material-ui/core/Avatar';
-import { db } from './firebase.js';
-import firebase from 'firebase';
+import React, { useState, useEffect, forwardRef } from "react";
+import "./Post.css";
+import Avatar from "@material-ui/core/Avatar";
+import { db } from "./firebase";
+import firebase from "firebase";
 
-function Post({ postId, user, username, caption, imageUrl }) {
-
+const Post = forwardRef(
+  ({ user, username, postId, imageUrl, caption }, ref) => {
     const [comments, setComments] = useState([]);
-    const [comment, setComment] = useState('');
+    const [comment, setComment] = useState("");
 
     useEffect(() => {
-        let unsubscribe;
-        if(postId) {
-            unsubscribe = db.collection('posts')
-            .doc(postId)
-            .collection('comments')
-            .orderBy('timestamp', 'asc')
-            .onSnapshot((snapshot) => {
-                setComments(snapshot.docs.map((doc) => doc.data()));
-            });
-        }
+      let unsubscribe;
+      if (postId) {
+        unsubscribe = db
+          .collection("posts")
+          .doc(postId)
+          .collection("comments")
+          .onSnapshot((snapshot) => {
+            setComments(snapshot.docs.map((doc) => doc.data()));
+          });
+      }
 
-        return () => {
-            unsubscribe();
-        };
+      return () => {
+        unsubscribe();
+      };
     }, [postId]);
 
-    const postComment = (event) => {
-        event.preventDefault();
+    const postComment = (e) => {
+      e.preventDefault();
 
-        db.collection("posts").doc(postId).collection("comments").add({
-            text: comment,
-            username: user.displayName,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        });
-        setComment('');
-    }
+      db.collection("posts").doc(postId).collection("comments").add({
+        text: comment,
+        username: user.displayName,
+      });
+      setComment("");
+    };
 
     return (
-        <div className="post">
-            <div className="post__header">
-                <Avatar 
-                    className="post__avatar"
-                    alt="Pleco"
-                    src="https://cdn.shopify.com/s/files/1/1163/2672/products/L397-Panaqolus-Pleco-1_1024x1024.jpg?v=1561723517"
-                />
-                <h3>{ username }</h3>
-            </div>
-
-            <img className="post__image" src={ imageUrl } alt="" />
-            <h4 className="post__text"><strong>{ username }</strong> { caption }</h4>
-            
-            <div className="post__comments">
-                {comments.map((comment) => (
-                    <p>
-                        <strong>{comment.username}</strong> {comment.text}
-                    </p>
-                ))}
-            </div>
-            {user && (
-                <form className="post__commentBox">
-                    <input 
-                        className="post__input"
-                        type="text"
-                        placeholder="Add a comment..."
-                        value={comment}
-                        onChange={(e) => setComment(e.target.value)}
-                    />
-                    <button
-                        className="post__button"
-                        disabled={!comment}
-                        type="submit"
-                        onClick={postComment}
-                    >
-                        Post
-                    </button>
-                </form>
-            )}
+      <div className="post" ref={ref}>
+        <div className="post__header">
+          <Avatar
+            className="post__avatar"
+            alt={username}
+            src="https://cdn.shopify.com/s/files/1/1163/2672/products/L397-Panaqolus-Pleco-1_1024x1024.jpg?v=1561723517"
+          />
+          <h3>{username}</h3>
         </div>
-    )
-}
 
-export default Post
+        <img className="post__image" src={imageUrl} alt="post" />
+        <h4 className="post__text">
+          {username} <span className="post__caption">{caption}</span>
+        </h4>
+
+        <div className="post__comments">
+          {comments.map((comment) => (
+            <p>
+              <b>{comment.username}</b> {comment.text}
+            </p>
+          ))}
+        </div>
+
+        {user && (
+          <form className="post__commentBox">
+            <input
+              className="post__input"
+              type="text"
+              placeholder="Add a comment..."
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
+            <button
+              disabled={!comment}
+              className="post__button"
+              type="submit"
+              onClick={postComment}
+            >
+              Post
+            </button>
+          </form>
+        )}
+      </div>
+    );
+  }
+);
+
+export default Post;
